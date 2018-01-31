@@ -1,5 +1,5 @@
 
-public class Email implements iCampo {
+public class Email implements IValidacion {
 	String email;
 	
 	@Override

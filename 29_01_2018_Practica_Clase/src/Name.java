@@ -1,5 +1,5 @@
 
-public class Name implements iCampo{
+public class Name implements IValidacion{
 	String name;
 
 	public boolean validar() {
@@ -11,7 +11,7 @@ public class Name implements iCampo{
 	    }
 	        
 
-	    if(name.matches("[a-zA-Z]*")){
+	    if(!name.matches("[a-zA-Z]*")){
 	    	System.out.println("El nombre esta mal");
 	    	return false;
 	    }

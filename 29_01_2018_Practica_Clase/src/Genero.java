@@ -1,5 +1,5 @@
 
-public class Genero implements iCampo {
+public class Genero implements IValidacion {
 	String genero;
 
 	public boolean validar() {
@@ -11,7 +11,7 @@ public class Genero implements iCampo {
 	    }
 	       
 
-	    if(genero.matches("[a-zA-Z]*")){
+	    if(!genero.matches("[a-zA-Z]*")){
 	    	System.out.println("El genero esta mal");
 	        return false;}
 	    

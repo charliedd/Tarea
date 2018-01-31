@@ -1,15 +1,15 @@
 import java.util.Scanner;
 
 public class Formulario {
-	iCampo[] campos = new iCampo[5];
+	Campo[] campos = new Campo[5];
 	
 	
 	public Formulario(){
-		campos[0] = new Email();
-		campos[1] = new Name();
-		campos[2] = new Phone();
-		campos[3] = new Password();
-		campos[4] = new Genero();
+		campos[0] = new Campo(new Name());
+		campos[1] = new Campo(new Email());
+		campos[2] = new Campo(new Genero());
+		campos[3] = new Campo(new Password());
+		campos[4] = new Campo(new Phone());
 	};
 
 	public void doEverything(){
@@ -35,11 +35,13 @@ public class Formulario {
 	}
 	
 	public boolean validarTodos(){
-		for (iCampo campo : campos) {
+		for (Campo campo : campos) {
 		    if(!campo.validar()){
+		    	System.out.println("Hay campos que no fueron llenados correctamente.");
 		    	return false;
 		    }
 		}
+		System.out.println("Se ha completado el registro.");
 		return true;
 	}
 	

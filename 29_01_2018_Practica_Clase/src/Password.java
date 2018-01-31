@@ -1,5 +1,5 @@
 
-public class Password implements iCampo {
+public class Password implements IValidacion {
 	String pswrd;
 
 	public boolean validar() {
