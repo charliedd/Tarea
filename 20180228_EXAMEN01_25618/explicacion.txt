@@ -1,0 +1,17 @@
+Existe la clase abstracta Banco
+Cada banco cuenta con su propio protocolo y formato en los que recibe.
+Tiene una lista de cuentas
+
+Tenemos la clase cuenta que simplemente almacenar el banco de los usuarios.
+
+La clase banco cuenta con el metodo hacer transferencia. Cada banco concreto implementa
+dependiendo lo que necesita pedir para la transeferencia.
+
+La clase transferencia guarda las cuentas origen y destino.
+
+Para conocer el banco que protocolo y formato va a utilizar al mandar la transferencia
+accesa la Transferencia -----> luego la cuenta destino ---> y de ahi obtiene la instancia del 
+banco ahi le aparece que protocolo va a necesitar y en que formato necesita parsear.
+
+Las partes que cambian serian el protocolo y el formato, el patron de diseno que aplique o al que creo
+que mas se parece es el strategy pattern.
