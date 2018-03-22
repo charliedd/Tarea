@@ -18,4 +18,5 @@ public class CloseGarage implements Command{
 		// TODO Auto-generated method stub
 		return "Abriendo la puerta del garage.... " + garageDoor.openDoor();
 	}
+
 }

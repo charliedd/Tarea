@@ -6,18 +6,21 @@ public class Invoker {
 	Fan fan;
 	Licuadora licuadora;
 	GarageDoor garageDoor;
+	CeilingFan ceilinFan;
 	
 	Invoker(){
 		luces = new Luces();
 		fan = new Fan();
 		licuadora = new Licuadora();
 		garageDoor = new GarageDoor();
+		ceilinFan = new CeilingFan();
 		
 		comandos = new Command[8];
 		lastCommand = null;
 		
-		this.comandos[0] = new Blend(licuadora);
-		this.comandos[1] = new Crush(licuadora);
+		this.comandos[0] = new ActivarVentilador(ceilinFan);
+		
+		this.comandos[1] = new MacroComando(new OpenGarage(garageDoor),new TurnOnLights(luces),new TurnOnFan(fan));
 		this.comandos[2] = new CloseGarage(garageDoor);
 		this.comandos[3] = new OpenGarage(garageDoor);
 		this.comandos[4] = new TurnOnLights(luces);
@@ -36,9 +39,10 @@ public class Invoker {
 		return this.comandos[bttnIndex].execute();
 	}
 	
-	public String buttonUndo(){
-		String comando = lastCommand.Undo();
-		lastCommand = null;
-		return comando;
+	public String buttonUndo(int index){
+		//String comando = lastCommand.Undo();
+		//lastCommand = null;
+		return comandos[index].Undo();
+		//return comando;
 	}
 }

@@ -18,4 +18,5 @@ public class Crush implements Command{
 		// TODO Auto-generated method stub
 		return "La licuadora se esta apagando......" + blender.turnOff();
 	}
+
 }
