@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
-public class WeatherData implements IWeatherData{
+public class WeatherData extends Observable implements IWeatherData {
 	private int temp;
 	private String msg;
 
@@ -10,6 +11,7 @@ public class WeatherData implements IWeatherData{
 	public void updateState(int temp, String msg) {
 		this.temp = temp;
 		this.msg = msg;
+		
 
 	}
 
@@ -36,6 +38,10 @@ public class WeatherData implements IWeatherData{
 			}
 			
 		}
+		
+	}
+	
+	public int getTemp(){
 		
 	}
 
